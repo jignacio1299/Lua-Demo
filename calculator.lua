@@ -1,0 +1,42 @@
+-- Lua Tables demonstration
+
+local listTable = {
+    true,
+    2,
+    "3",
+    function()
+        print(4)
+    end,
+}
+
+local mapTable = {
+    [1]     = true,
+    ["2"]   = 2,
+    three   = "third value",
+    [function() return 0 end] = "fourth value"
+}
+
+print(listTable)
+print(mapTable)
+
+local calculator = {
+    add = function(num1, num2)
+        return num1 + num2
+    end,
+
+    sub = function(num1, num2)
+        return num1 - num2
+    end,
+
+    mul = function(num1, num2)
+        return num1 * num2
+    end,
+
+    div = function(num1, num2)
+        return num1 / num2
+    end
+}
+
+local numbers = {10, 20, 30}
+
+print(calculator.add(numbers[1], numbers[2]))
