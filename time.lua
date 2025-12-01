@@ -38,4 +38,6 @@ local time2 = setmetatable({ h = 10, m = 2,  s = 3  }, time_mt)
 -- Add them together utilizing the metatable for time
 local time3 = time1 + time2
 
-print(time3)
+for key, value in pairs(time3) do
+    print(key, value)
+end

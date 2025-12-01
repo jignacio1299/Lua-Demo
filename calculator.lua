@@ -1,4 +1,5 @@
 -- Lua Tables demonstration
+local printer = require("printer")
 
 local listTable = {
     true,
@@ -16,8 +17,8 @@ local mapTable = {
     [function() return 0 end] = "fourth value"
 }
 
-print(listTable)
-print(mapTable)
+printer.printList(listTable)
+printer.printMap(mapTable)
 
 local calculator = {
     add = function(num1, num2)
