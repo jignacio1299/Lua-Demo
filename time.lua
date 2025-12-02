@@ -32,7 +32,7 @@ time_mt.__add = function(left, right)
 end
 
 -- Define two times
-local time1 = setmetatable({ h = 15, m = 59, s = 59}, time_mt)
+local time1 = setmetatable({ h = 15, m = 59, s = 59 }, time_mt)
 local time2 = setmetatable({ h = 10, m = 2,  s = 3  }, time_mt)
 
 -- Add them together utilizing the metatable for time
