@@ -1,14 +1,7 @@
 -- Lua Tables demonstration
 local printer = require("printer")
 
-local listTable = {
-    true,
-    2,
-    "3",
-    function()
-        print(4)
-    end,
-}
+local listTable = { true, 2,  "3", function() print(4) end }
 
 local mapTable = {
     [1]     = true,
