@@ -1,23 +1,28 @@
 -- TODO: Make concurrency example
 
-local printNums1 = function()
-    for i = 1, 10, 1 do
-        print("Coroutine 1: " .. i)
-    end
-    print("Done\n")
+local function nums1And5()
+    print(5)
+    -- Let the next coroutine run
     coroutine.yield()
+
+    print(1)
 end
 
-local printNums2 = function()
-    for i = 10, 20, 1 do
-        print("Coroutine 2: " .. i)
-    end
-    print("Done\n")
-    coroutine.yield()
+local function nums234()
+    print(4)
+    print(3)
+    print(2)
 end
 
-local routine1 = coroutine.create(printNums1)
-local routine2 = coroutine.create(printNums2)
+-- Without coroutines, prints 1 5 2 3 4
+-- nums1And5()
+-- nums234()
 
-coroutine.resume(routine1)
-coroutine.resume(routine2)
+-- With coroutines
+
+local Routine1 = coroutine.create(nums1And5)
+local Routine2 = coroutine.create(nums234)
+
+coroutine.resume(Routine1)
+coroutine.resume(Routine2)
+coroutine.resume(Routine1)

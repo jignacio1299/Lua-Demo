@@ -1,6 +1,6 @@
 -- Demonstration of __index
 
--- Factorial metatablep
+-- Factorial metatable
 
 local printer = require("printer")
 local fact_mt = {
@@ -18,8 +18,6 @@ local fact_mt = {
 
 local factorialList = setmetatable({}, fact_mt)
 
-print(factorialList[2])     -- Print 2!
-print(factorialList[3])     -- Print 3!
 print(factorialList[10])    -- Print 10!
 
 printer.printMap(factorialList)

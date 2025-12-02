@@ -13,24 +13,17 @@ local mapTable = {
 printer.printList(listTable)
 printer.printMap(mapTable)
 
+
+
+
+
 local calculator = {
     add = function(num1, num2)
         return num1 + num2
-    end,
-
-    sub = function(num1, num2)
-        return num1 - num2
-    end,
-
-    mul = function(num1, num2)
-        return num1 * num2
-    end,
-
-    div = function(num1, num2)
-        return num1 / num2
     end
 }
 
 local numbers = {10, 20, 30}
 
+-- 1 BASE INDEX: prints 30 instead of 50
 print(calculator.add(numbers[1], numbers[2]))
