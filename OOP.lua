@@ -1,46 +1,20 @@
------------------------Vehicle Class---------------------------
+Animal = {}
 
-local vehicle = {}
-vehicle.__index = vehicle
-
--- Constructor
-function vehicle.New(make, model)
-    local self = setmetatable({}, vehicle) -- New instance of a vehicle
-
-    -- Members
-    self.make = make
-    self.model = model
-    self.mileage = 0
-   
-    return self -- Return the newly created vehicle
+function Animal:speak()
+    print("Animal makes a sound")
 end
 
--- Drive Method (the colon operator automatically passes the vehicle table as a parameter so it can be accessed in the function)
-function vehicle:Drive(distance)
-    self.mileage = self.milage + distance
+
+Dog = { __index = Dog }
+setmetatable(Dog, { __index = Animal })
+
+function Dog:speak() 
+    print("Bark")
 end
 
--- Print Method
-function vehicle:Print()
-    print("This " .. self.make .. self.model .. " has driven " .. self.mileage .. " miles.")
-end
 
----------------------------------------------------------------
+animal = setmetatable({}, Animal)
+dog = setmetatable({}, Dog)
 
--------------------------Truck Class---------------------------
-
-local truck = {}
-
---Constructor
-function truck.New(make, model)
-    local self = setmetatable({}, vehicle) -- New truck object
-
-    -- Vehicle Base
-    self = vehicle.New(make, model)
-
-    -- Truck Members
-    self.cargo = {}
-    self.maxWeight = 100
-
-    return self
-end 
+animal:speak()  
+dog:speak()  
