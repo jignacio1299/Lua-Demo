@@ -1,7 +1,6 @@
 -- Lua Tables demonstration
-local printer = require("printer")
 
-local listTable = { true, 2,  "3", function() print(4) end }
+local listTable = { "1 based indexed", 2,  true, function() print(4) end }
 
 local mapTable = {
     [1]     = true,
@@ -10,13 +9,8 @@ local mapTable = {
     [function() return 0 end] = "fourth value"
 }
 
-printer.printList(listTable)
-printer.printMap(mapTable)
-
-
-
-
-
+print(mapTable)
+print(listTable)
 local calculator = {
     add = function(num1, num2)
         return num1 + num2
@@ -25,5 +19,5 @@ local calculator = {
 
 local numbers = {10, 20, 30}
 
--- 1 BASE INDEX: prints 30 instead of 50
+-- 1 BASE INDEX : prints 30 instead of 50
 print(calculator.add(numbers[1], numbers[2]))

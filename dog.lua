@@ -1,20 +1,44 @@
-Animal = {}
+-- Demonstration of OOP
 
+-- Animal Class --
+local Animal = {}
+Animal.__index = Animal
+
+-- Constructor
+function Animal.new(name)
+    local self = setmetatable({}, Animal)
+    self.name = name    -- Member
+    return self
+end
+
+-- Methods
 function Animal:speak()
     print("Animal makes a sound")
 end
 
+function Animal:eat(food)
+    print(self.name .. " eats " .. food)
+end
 
-Dog = { __index = Dog }
-setmetatable(Dog, { __index = Animal })
+-- Dog Class --
+
+local Dog = {}
+Dog.__index = Dog
+setmetatable(Dog, Animal)
+
+-- Constructor
+function Dog.new(name)
+    local self = setmetatable({}, Dog)
+    self.name = name    -- Member
+    return self
+end
 
 function Dog:speak() 
-    print("Bark")
+    print(self.name .. " barks!")
 end
 
 
-animal = setmetatable({}, Animal)
-dog = setmetatable({}, Dog)
+local Fido = Dog.new("Fido")
 
-animal:speak()  
-dog:speak()  
+Fido:eat("kibble")
+Fido:speak()

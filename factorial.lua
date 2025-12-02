@@ -7,7 +7,7 @@ local fact_mt = {
 
     -- Define __index
     __index = function(self, key)
-        if key < 2 then
+        if key < 1 then
             return 1
         end
 
@@ -16,8 +16,10 @@ local fact_mt = {
     end
 }
 
-local factorialList = setmetatable({}, fact_mt)
+local factorialList = {}
+setmetatable(factorialList, fact_mt)
 
 print(factorialList[10])    -- Print 10!
 
+-- 1! to 10! have also been cached 
 printer.printMap(factorialList)

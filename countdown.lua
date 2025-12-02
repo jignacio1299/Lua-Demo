@@ -1,4 +1,4 @@
--- TODO: Make concurrency example
+-- Demonstration of coroutines
 
 local function nums1And5()
     print(5)
