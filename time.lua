@@ -1,5 +1,5 @@
 -- Demonstration of __add
-
+local printer = require("printer")
 -- Time metatable
 local time_mt = {}
 
@@ -42,6 +42,4 @@ setmetatable(time2, time_mt)
 -- Add them together utilizing the metatable for time
 local time3 = time1 + time2
 
-for key, value in pairs(time3) do
-    print(key, value)
-end
+printer.printMap(time3)
